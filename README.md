@@ -77,7 +77,7 @@ Note: Using localhost and http will only work when developing, using the sandbox
 
 #### Scopes
 
-While you are in `settings.py`, you'll notice the scope sections.
+While you are in [settings.py](OAuth2DjangoSampleApp/settings.py), you'll notice the scope sections.
 
 ```
   ACCOUNTING_SCOPE = 'com.intuit.quickbooks.accounting'
@@ -91,7 +91,7 @@ While you are in `settings.py`, you'll notice the scope sections.
 
 ### Run your app
 
-After setting up both Developer Portal and your `settings.py`, try launching your app again!  All flows should work.  The sample app supports the following flows:
+After setting up both Developer Portal and your [settings.py](OAuth2DjangoSampleApp/settings.py), try launching your app again!  All flows should work.  The sample app supports the following flows:
 
 **Sign In With Intuit** - this flow requests OpenID only scopes. After clicking on the 'Sign In With Intuit' button from the homepage it will end up on a Connected page displaying all the information that you requested via the OpenId scopes.
 
