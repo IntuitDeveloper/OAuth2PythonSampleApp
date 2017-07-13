@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>OAuth2 Sample App - Intuit</title>
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    if(window.opener) {
+      window.opener.location.href = '/sampleAppOAuth2/connected'
+      window.close()
+    }
+  </script>
+  <script>
+    function apiCall() {
+      $("#result").html('Loading...')
+      $.get("/sampleappoauth2/apiCall", function(data) {
+        $("#result").html(data)
+      })
+    }
+    function revokeCall() {
+      $("#result").html('Loading...')
+      $.get("/sampleappoauth2/disconnect", function(data) {
+        $("#result").html(data)
+      })
+    }
+    function refreshCall() {
+      $("#result").html('Loading...')
+      $.get("/sampleappoauth2/refreshTokenCall", function(data) {
+        $("#result").html(JSON.stringify(data, null, 2))
+      })
+    }
+      
+  </script>
+</head>
+<body>
+  <a href="/sampleappoauth2/">Home</a>
+  <h3>Connected!</h3>
+  <p>Welcome {{ first_name }}!</p>
+  <p>Would you like to make a sample API call?</p>
+  <div>
+    <button onclick="apiCall()">QuickBooks API Call</button>
+    <button onclick="refreshCall()">Refresh Token Call</button>
+    <button onclick="revokeCall()">Revoke Token Call</button>
+    <br><br>
+    <div><code id="result"></code></div>
+</body>
+</html>

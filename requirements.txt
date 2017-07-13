@@ -1,0 +1,3 @@
+python_jose==1.3.2
+requests==2.13.0
+Django==1.10
