@@ -35,6 +35,9 @@ def getAppNow(request):
 
 def authCodeHandler(request):
     state = request.GET.get('state', None)
+    error = request.GET.get('error', None)
+    if error == 'access_denied':
+        return redirect('index')
     if state is None:
         return HttpResponseBadRequest()
     elif state != get_CSRF_token(request): #validate against CSRF attacks
