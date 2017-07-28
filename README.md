@@ -70,7 +70,7 @@ Once you have created an app on Intuit's Developer Portal, you can find your cre
 
 #### Redirect URI
 
-Update your app settings on the Developer Portal ("Keys" section) with the correct Redirect URI: `http://localhost/sampleappoauth2/authcodehandler`. 
+Update your app settings on the Developer Portal ("Keys" section) with the correct Redirect URI: `http://localhost:8000/sampleappoauth2/authcodehandler`. 
 
 Note: Using localhost and http will only work when developing, using the sandbox credentials. Once you use production credentials, you'll need to host your app over https.
 
