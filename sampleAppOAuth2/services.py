@@ -88,6 +88,9 @@ def getCompanyInfo(access_token, realmId):
     headers = {'Authorization': auth_header, 'accept': 'application/json'}
     r = requests.get(settings.SANDBOX_QBO_BASEURL + route, headers=headers)
     status_code = r.status_code
+    if status_code != 200:
+        response = ''
+        return response, status_code
     response = json.loads(r.text)
     return response, status_code
 
