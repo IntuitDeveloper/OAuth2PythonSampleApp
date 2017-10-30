@@ -50,7 +50,7 @@ def authCodeHandler(request):
     state = request.GET.get('state', None)
     error = request.GET.get('error', None)
     if error == 'access_denied':
-        return redirect('index')
+        return redirect('sampleAppOAuth2:index')
     if state is None:
         return HttpResponseBadRequest()
     elif state != get_CSRF_token(request):  # validate against CSRF attacks
@@ -69,9 +69,9 @@ def authCodeHandler(request):
         if not validateJWTToken(bearer.idToken):
             return HttpResponse('JWT Validation failed. Please try signing in again.')
         else:
-            return redirect('connected')
+            return redirect('sampleAppOAuth2:connected')
     else:
-        return redirect('connected')
+        return redirect('sampleAppOAuth2:connected')
 
 
 def connected(request):

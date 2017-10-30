@@ -18,6 +18,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^(?i)sampleAppOAuth2', include('sampleAppOAuth2.urls')),
+    url(r'^(?i)sampleAppOAuth2/', include('sampleAppOAuth2.urls', namespace='sampleAppOAuth2')),
     url(r'^(?i)admin/', admin.site.urls),
 ]
