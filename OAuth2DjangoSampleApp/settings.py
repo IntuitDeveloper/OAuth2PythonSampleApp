@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -61,9 +60,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                 "../sampleAppOAuth2/templates")
-            ],
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../sampleAppOAuth2/templates")
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,7 +76,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'OAuth2DjangoSampleApp.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
@@ -88,7 +85,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -108,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
@@ -122,13 +117,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, "static"), )
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), ]
 
 # OAuth specific variables
 DISCOVERY_DOCUMENT = 'https://developer.api.intuit.com/.well-known/openid_sandbox_configuration/'
@@ -136,9 +130,8 @@ CLIENT_ID = '<EnterYourAppClientID>'
 CLIENT_SECRET = '<EnterYourAppClientSecret>'
 REDIRECT_URI = 'http://localhost:8000/sampleappoauth2/authCodeHandler'
 ACCOUNTING_SCOPE = 'com.intuit.quickbooks.accounting'
-OPENID_SCOPES = ['openid','profile','email','phone','address']
-GET_APP_SCOPES = ['com.intuit.quickbooks.accounting', 'openid','profile','email','phone','address']
+OPENID_SCOPES = ['openid', 'profile', 'email', 'phone', 'address']
+GET_APP_SCOPES = ['com.intuit.quickbooks.accounting', 'openid', 'profile', 'email', 'phone', 'address']
 SANDBOX_QBO_BASEURL = 'https://sandbox-quickbooks.api.intuit.com'
 SANDBOX_PROFILE_URL = 'https://sandbox-accounts.platform.intuit.com/v1/openid_connect/userinfo'
 ID_TOKEN_ISSUER = 'https://oauth.platform.intuit.com/op/v1'
-
