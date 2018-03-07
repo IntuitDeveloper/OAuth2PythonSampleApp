@@ -116,4 +116,4 @@ This services.py file contains all of the core logic of the application. Mainly,
 This app stores all the tokens and user information in the session. For production ready app, tokens should be encrypted and stored in a database.
 
 ### Discovery document
-The app calls the discovery API during starup and loads all the endpoint urls. For production ready app, make sure to run this API once a day to get the latest urls.
+The app calls the discovery API during startup and loads all the endpoint urls. For production ready app, make sure to run this API once a day to get the latest urls.
