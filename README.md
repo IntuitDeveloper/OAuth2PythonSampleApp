@@ -1,3 +1,5 @@
+[![Sample Banner](views/Sample.png)][ss1]
+
 ## OAuth 2.0 - Python 3 Sample App
 
 The [Intuit Developer team](https://developer.intuit.com) has written this OAuth 2.0 Sample App in Python 3.5 with Django 1.10 to provide working examples of OAuth 2.0 concepts, and how to integrate with Intuit endpoints.
@@ -117,3 +119,5 @@ This app stores all the tokens and user information in the session. For producti
 
 ### Discovery document
 The app calls the discovery API during startup and loads all the endpoint urls. For production ready app, make sure to run this API once a day to get the latest urls.
+
+[ss1]: https://help.developer.intuit.com/s/samplefeedback?cid=9010&repoName=OAuth2PythonSampleApp
