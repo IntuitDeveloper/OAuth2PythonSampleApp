@@ -119,6 +119,7 @@ This app stores all the tokens and user information in the session. For producti
 
 ### Discovery document
 The app calls the discovery API during startup and loads all the endpoint urls. For production ready app, make sure to run this API once a day to get the latest urls.
+
 [ss1]: #
 [ss2]: https://customersurveys.intuit.com/jfe/form/SV_9LWgJBcyy3NAwHc?check=Yes&checkpoint=OAuth2PythonSampleApp&pageUrl=github
 [ss3]: https://customersurveys.intuit.com/jfe/form/SV_9LWgJBcyy3NAwHc?check=No&checkpoint=OAuth2PythonSampleApp&pageUrl=github
