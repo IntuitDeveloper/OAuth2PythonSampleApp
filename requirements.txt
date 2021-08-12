@@ -1,4 +1,4 @@
-Django==1.11.23
+Django==2.2.24
 python_jose==2.0.2
 requests==2.20.0
 jose==1.0.0
