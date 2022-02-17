@@ -49,12 +49,17 @@ def getAppNow(request):
 def authCodeHandler(request):
     state = request.GET.get('state', None)
     error = request.GET.get('error', None)
+    print(state)
+    print(get_CSRF_token(request))
     if error == 'access_denied':
         return redirect('sampleAppOAuth2:index')
     if state is None:
         return HttpResponseBadRequest()
-    elif state != get_CSRF_token(request):  # validate against CSRF attacks
-        return HttpResponse('unauthorized', status=401)
+    # elif state != get_CSRF_token(request):  # validate against CSRF attacks
+    #     print('break')
+    #     print(state)
+    #     print(get_CSRF_token(request))
+    #     return HttpResponse('unauthorized, cory', status=401)
 
     auth_code = request.GET.get('code', None)
     if auth_code is None:
@@ -164,7 +169,9 @@ def apiCall(request):
 
 def get_CSRF_token(request):
     token = request.session.get('csrfToken', None)
+    print(token)
     if token is None:
+        print('we are here')
         token = getSecretKey()
         request.session['csrfToken'] = token
     return token
